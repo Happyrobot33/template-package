@@ -36,6 +36,10 @@ Full details at [Converting Assets to a VPM Package](https://vcc.docs.vrchat.com
 You'll need to make a few changes in [release.yml](.github/workflows/release.yml):
 * Change the `packageID` property on line 17 to include the names of all of the packages in this repository, like `packageID: ["com.vrchat.demo-template", "another.package"]`
 
+You will also need to modify source.json to include some important information.
+* Change the instances of 'YOUR_GITHUB_NAME' to your Github username
+* Change the instances of 'REPO_NAME' to the name of your repository
+
 Finally, go to the "Settings" page for your repo, then choose "Pages", and look for the heading "Build and deployment". Change the "Source" dropdown from "Deploy from a branch" to "GitHub Actions".
 
 That's it!
