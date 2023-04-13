@@ -89,6 +89,12 @@ const setTheme = () => {
 
   const vccAddRepoButton = document.getElementById('vccAddRepoButton');
   vccAddRepoButton.addEventListener('click', () => window.location.assign(`vcc://vpm/addRepo?url=${encodeURIComponent(LISTING_URL)}`));
+  //check to see if the website was accessed with a query of ?install=true
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('install') === 'true') {
+    vccAddRepoButton.click();
+    alert('VCC will now open and add this repository to your list of repositories. You can then install packages from this repository, and they will be automatically updated when a new version is released.');
+  }
 
   const vccUrlFieldCopy = document.getElementById('vccUrlFieldCopy');
   vccUrlFieldCopy.addEventListener('click', () => {
