@@ -33,8 +33,8 @@ Full details at [Converting Assets to a VPM Package](https://vcc.docs.vrchat.com
 
 ## Setting up the Automation
 
-You'll need to make a few changes in [release.yml](.github/workflows/release.yml):
-* Change the `packageID` property on line 17 to include the names of all of the packages in this repository, like `packageID: ["com.vrchat.demo-template", "another.package"]`
+You'll need to make a change in [release.yml](.github/workflows/release.yml):
+* Change the `packagePrefix` to the prefix of your package. For example, if your package is `com.vrchat.demo-template`, the prefix is `com`. If your package is `test.package`, the prefix is `test`.
 
 You will also need to modify source.json to include some important information.
 * Change the instances of `YOUR_GITHUB_NAME` to your Github username
@@ -51,7 +51,7 @@ Some other notes:
 
 ## 🎉 Publishing a Release
 
-A release will be automatically built whenever you push changes to your main branch which update files in the package folder you specified in `release.yml`. The version specified in your `package.json` file will be used to define the version of the release. Tags will be based on the displayname of the package and the version number, and there will be a release for every individual custom package.
+A release will be automatically built whenever you push changes to your main branch which update files in the package folder you specified in `release.yml`. The version specified in your `package.json` file will be used to define the version of the release. Tags will be based on the displayname of the package and the version number, and there will be a release for every individual custom package. it wont build a release for a package if there is no change in its package.json version number.
 
 ## 📃 Rebuilding the Listing
 
